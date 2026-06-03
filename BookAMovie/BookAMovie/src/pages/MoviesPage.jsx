@@ -65,7 +65,7 @@ export function MoviesPage({ showHero = true }) {
         {error ? <p className="section-subtitle">{error}</p> : null}
 
         <div className="movies-container">
-          <button className="scroll-btn left" onClick={scrollLeft}>{'<'}</button>
+          <button className="scroll-btn left" onClick={scrollLeft}>{'🢀'}</button>
 
           <div className="movies-scroll" ref={scrollRef}>
             {movies.map((movie) => (
@@ -87,7 +87,7 @@ export function MoviesPage({ showHero = true }) {
             ))}
           </div>
 
-          <button className="scroll-btn right" onClick={scrollRight}>{'>'}</button>
+          <button className="scroll-btn right" onClick={scrollRight}>{'🢂'}</button>
         </div>
       </section>
     </>

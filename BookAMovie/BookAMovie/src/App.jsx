@@ -6,6 +6,7 @@ import { Book } from './pages/Book';
 import { Login } from './pages/Login';
 import { Signup } from './pages/Signup';
 import { AboutUs } from './AboutUs';
+import { WishList } from './pages/WishList';
 import { Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/about" element ={<AboutUs/>}/>
+        <Route path="/wishlist" element={<WishList/>}/>
       </Routes>
     </div>
   );

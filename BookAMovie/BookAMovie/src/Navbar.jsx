@@ -9,6 +9,7 @@ export function Navbar() {
   const categories = [
     { to: '/movies', label: 'Movies' },
     { to: '/book', label: 'Book' },
+    { to: '/wishlist', label: 'Wish List' },
   ];
 
   const handleSignOut = () => {
@@ -32,6 +33,12 @@ export function Navbar() {
             <option value="Baroda">Baroda</option>
             <option value="Surat">Surat</option>
             <option value="Rajkot">Rajkot</option>
+            <option value="Gandhinagar">Gandhinagar</option>
+            <option value="Junagadh">Junagadh</option>
+            <option value="Bhavnagar">Bhavnagar</option>
+            <option value="Jamnagar">Jamnagar</option>
+            <option value="Anand">Anand</option>
+            <option value="Navsari">Navsari</option>
           </select>
         </div>
 

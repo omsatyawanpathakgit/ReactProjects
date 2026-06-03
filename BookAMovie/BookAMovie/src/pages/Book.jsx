@@ -15,6 +15,11 @@ export function Book() {
   const [date, setDate] = useState('');
   const [confirmation, setConfirmation] = useState(null);
 
+  const [wishListItems, setWishListItems] = useState(() => {
+  const saved = localStorage.getItem('wishList');
+  return saved ? JSON.parse(saved) : [];
+});
+
   useEffect(() => {
     const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
     if (!isLoggedIn) {
@@ -41,6 +46,13 @@ export function Book() {
 
     loadMovies();
   }, []);
+
+  const wishList = (movie) => {
+    const updatedList = [...wishListItems, movie];
+    setWishListItems(updatedList);
+
+    localStorage.setItem('wishList', JSON.stringify(updatedList));
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -82,7 +94,11 @@ export function Book() {
                 onClick={() => setSelectedMovie(movie.title)}
               >
                 {movie.title}
+                <button onClick={() => wishList(movie)} className="wish-list-btn">
+                  Add to Wish List
+                </button>
               </li>
+              
             ))}
           </ul>
         </aside>

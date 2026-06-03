@@ -896,3 +896,14 @@ body {
     max-width: none;
   }
 }
+
+.wish-list-btn {
+  margin-left: 12px;
+  padding: 6px 10px;
+  border: none;
+  background-color: #e30613;
+  color: white;
+  font-size: 12px;
+  border-radius: 20px;
+  cursor: pointer;
+}
