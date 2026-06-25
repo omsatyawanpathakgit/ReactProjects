@@ -192,6 +192,8 @@ body {
   gap: 15px;
 }
 
+
+
 .movies-scroll {
   display: flex;
   gap: 20px;
@@ -216,12 +218,13 @@ body {
   position: relative;
   overflow: hidden;
   border: 2px solid #ffe6e6;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 10px 20px rgba(227, 6, 19, 0.1);
 }
 
 .poster:hover {
-  border-color: #e30613;
-  transform:scale(1.05);
+  border-color: #07f607;
+  transform:scale(1.15);
   transition: transform 1s ease;
   box-shadow: 0 15px 30px rgba(227, 6, 19, 0.2);
 }

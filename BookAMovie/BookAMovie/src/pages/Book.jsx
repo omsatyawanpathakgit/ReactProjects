@@ -16,8 +16,10 @@ export function Book() {
   const [confirmation, setConfirmation] = useState(null);
 
   const [wishListItems, setWishListItems] = useState(() => {
-  const saved = localStorage.getItem('wishList');
-  return saved ? JSON.parse(saved) : [];
+    const username = localStorage.getItem("username");
+    const saved = localStorage.getItem(`wishList_${username}`);
+
+    return saved ? JSON.parse(saved) : [];
 });
 
   useEffect(() => {
@@ -48,10 +50,30 @@ export function Book() {
   }, []);
 
   const wishList = (movie) => {
-    const updatedList = [...wishListItems, movie];
+    const username = localStorage.getItem("username");
+
+    if(!username){
+      alert("Please login first");
+      return;
+    }
+
+
+    const updatedList = [
+      ...wishListItems,
+      movie
+    ];
+
+
     setWishListItems(updatedList);
 
-    localStorage.setItem('wishList', JSON.stringify(updatedList));
+
+    localStorage.setItem(
+      `wishList_${username}`,
+      JSON.stringify(updatedList)
+    );
+
+
+    alert(`${movie.title} added to wishlist`);
   }
 
   const handleSubmit = (event) => {

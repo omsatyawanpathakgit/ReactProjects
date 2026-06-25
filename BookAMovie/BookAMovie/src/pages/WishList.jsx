@@ -9,7 +9,7 @@ export function WishList() {
 
 
   //Get all wish list items from local storage:
-    const [wishList, setWishList] = useState([]);
+  const [wishList, setWishList] = useState([]);
     
 
   useEffect(() => {
@@ -17,7 +17,10 @@ export function WishList() {
     if (!isLoggedIn) {
       navigate('/login');
     }
-    const savedList = localStorage.getItem('wishList');
+
+    const username = localStorage.getItem("username");
+    const savedList = localStorage.getItem(`wishList_${username}`);
+    
     setWishList(savedList ? JSON.parse(savedList) : []);
   }, [navigate]);  
   

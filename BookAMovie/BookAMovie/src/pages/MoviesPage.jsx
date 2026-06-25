@@ -79,8 +79,9 @@ export function MoviesPage({ showHero = true }) {
                 </div>
                 <div className="movie-info">
                   <h3>{movie.title}</h3>
+                  <h3>Release: {movie.release_date}</h3>
                   <p>
-                    {movie.release_date ? movie.release_date.slice(0, 4) : 'Upcoming'} - Rating {movie.vote_average?.toFixed(1) ?? 'N/A'}
+                    Rating : {movie.vote_average?.toFixed(1) ?? 'N/A'}
                   </p>
                 </div>
               </div>
