@@ -7,7 +7,7 @@ export function Navbar() {
   const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
 
   const categories = [
-    { to: '/movies', label: 'Movies' },
+    { to: '/contents', label: 'Contents' },
     { to: '/book', label: 'Book' },
     { to: '/wishlist', label: 'Wish List' },
   ];
@@ -22,7 +22,7 @@ export function Navbar() {
       <div className="nav-container">
         <div className="logo">
           <Link to="/" className="logo-button">
-            <span className="logo-text">BookAMovie</span>
+            <span className="logo-text">BookAContent</span>
           </Link>
         </div>
         

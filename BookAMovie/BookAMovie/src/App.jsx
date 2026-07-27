@@ -1,13 +1,14 @@
 import './App.css';
 import { Navbar } from './Navbar';
 import { HomePage } from './pages/HomePage';
-import { MoviesPage } from './pages/MoviesPage';
+import { ContentsPage } from './pages/ContentsPage';
 import { Book } from './pages/Book';
 import { Login } from './pages/Login';
 import { Signup } from './pages/Signup';
 import { AboutUs } from './AboutUs';
 import { WishList } from './pages/WishList';
-import { Route, Routes } from 'react-router-dom';
+import { BookingSuccess } from "./pages/BookingSuccess";
+import { Route, Routes, Navigate } from 'react-router-dom';
 
 function App() {
   return (
@@ -15,12 +16,13 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/movies" element={<MoviesPage />} />
+        <Route path="/contents" element={<ContentsPage/>} />
         <Route path="/book" element={<Book />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/about" element ={<AboutUs/>}/>
         <Route path="/wishlist" element={<WishList/>}/>
+        <Route path="/booking-success" element={<BookingSuccess />} />
       </Routes>
     </div>
   );

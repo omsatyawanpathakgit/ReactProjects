@@ -1,11 +1,11 @@
 import React from 'react';
 import { CTA } from '../CTA';
-import { MoviesPage } from './MoviesPage';
+import { ContentsPage } from './ContentsPage';
 
 export function HomePage() {
   return (
     <>
-      <MoviesPage showHero={false} />
+      <ContentsPage showHero={false} />
       <CTA />
     </>
   );

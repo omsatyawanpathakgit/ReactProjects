@@ -1,3 +1,85 @@
+.success-page {
+
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    background:#111;
+    color:white;
+
+    font-family:Arial,sans-serif;
+
+}
+
+
+.success-image {
+
+    max-width: 90%;   /* scales with screen size */
+    height: auto;     /* keeps aspect ratio */
+
+    /*animation:pop 0.6s ease;*/
+    animation:pop 7s ease;
+
+}
+
+
+.success-page h1 {
+
+    margin-top:20px;
+    font-size:40px;
+
+}
+
+
+.success-page p {
+
+    font-size:20px;
+}
+
+.container{
+    display:flex;
+    flex-direction:row;      /* Left → Right */
+    justify-content:space-between;
+    align-items:center;
+    width:90%;
+    margin:auto;
+    gap:40px;
+}
+
+.left{
+    flex:1;
+}
+
+.right{
+    flex:0.8;
+    display:flex;
+    justify-content:center;
+}
+
+.right img{
+    width:100%;
+    max-width:400px;
+}
+
+
+@keyframes pop {
+
+    from{
+        transform:scale(0);
+        opacity:0;
+    }
+
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -64,6 +146,8 @@ body {
   border-radius: 50px;
   font-size: 16px;
   outline: none;
+  background-color: white;
+  color:red;
 }
 
 .search-bar input:focus {
@@ -76,9 +160,14 @@ body {
   gap: 25px;
 }
 
-.location {
-  font-weight: 500;
-  cursor: pointer;
+.location select {
+  color: #e30613;      /* Selected value color */
+  background: rgb(255, 255, 255);
+}
+
+.location select option {
+  color: #e30613;      /* Dropdown list item color */
+  background: rgb(234, 229, 229);
 }
 
 .sign-in-btn {
@@ -202,11 +291,25 @@ body {
   scrollbar-width: none;
 }
 
+
+.tv-scroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px 0;
+  scrollbar-width: none;
+}
+
 .movies-scroll::-webkit-scrollbar {
   display: none;
 }
 
 .movie-card {
+  min-width: 260px;
+  cursor: pointer;
+}
+
+.tv-card {
   min-width: 260px;
   cursor: pointer;
 }
@@ -278,11 +381,34 @@ body {
   letter-spacing: 0.03em;
 }
 
+.tv-info {
+  margin-top: 12px;
+  padding: 10px 12px 14px;
+  background: #fff;
+  border-radius: 0 0 16px 16px;
+  border: 1px solid #ffe6e6;
+}
+
+.tv-info h3 {
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #1f1f1f;
+}
+
+.tv-info p {
+  font-size: 13px;
+  color: #e30613;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
 /* Scroll Buttons */
 .scroll-btn {
-  background: white;
-  border: 2px solid #ffcccc;
-  width: 50px;
+  background: black;
+  color:white;
+  border: 5px solid red;
+  width: 320px;
   height: 50px;
   border-radius: 50%;
   font-size: 24px;
@@ -693,6 +819,7 @@ body {
 /* CTA Banner */
 .cta-banner {
   background-color: #e30613;
+  min-height:100vh;
   color: white;
   padding: 60px 20px;
   text-align: center;

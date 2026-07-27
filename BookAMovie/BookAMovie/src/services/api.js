@@ -11,6 +11,15 @@ export const getPopularMovies = async () => {
     return data.results;
 }
 
+export const getPopularTVShows = async () => {
+    const response = await fetch(`${BASE_URL}/tv/popular?api_key=${API_KEY}`);
+    if (!response.ok) {
+        throw new Error('Failed to fetch popular TV shows.');
+    }
+    const data = await response.json();
+
+    return data.results;
+}
 
 export const searchMovies = async (query) => {
     const response = await fetch(`${BASE_URL}/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(
@@ -30,4 +39,11 @@ export const getMoviePosterUrl = (posterPath) => {
     return `${IMAGE_BASE_URL}${posterPath}`;
 }
 
+export const getTVShowPosterUrl = (posterPath) => {
+    if (!posterPath) {
+        return 'https://via.placeholder.com/320x420?text=No+Poster';
+    }
+
+    return `${IMAGE_BASE_URL}${posterPath}`;
+}
 
